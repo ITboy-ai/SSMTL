@@ -1,6 +1,6 @@
-# img: download dataset from https://www.ehu.eus/ccwintco/index.php/Hyperspectral_Remote_Sensing_Scenes, and tranform .mat into .npy
-# raw_gt: oridinal label without novel class
-# gt: manual label with novel class
+## img: download dataset from https://www.ehu.eus/ccwintco/index.php/Hyperspectral_Remote_Sensing_Scenes, and tranform .mat into .npy
+## raw_gt: oridinal label without novel class
+## gt: manual label with novel class
 ### Pavia University
   Class 1-9: original known classes
   Class 10-15: additional unknown classes
