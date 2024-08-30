@@ -5,5 +5,5 @@
   Class 1-16: original known classes
   Class 17: additional unknown classes
 # Indian Pines
-  Class 1-16: original known classes
-  Class 17: additional unknown classes
+  Class 1-8: original known classes
+  Class 9-17: additional unknown classes
