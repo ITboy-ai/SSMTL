@@ -9,29 +9,14 @@ Contact: <liu_y@stu.xidian.edu.cn>
 Code and annotations are released here, or check [https://github.com/sjliu68/MDL4OW](https://github.com/sjliu68/MDL4OW)
 
 ## Overview
-##### Ordinary: misclassify road, house, helicopter, and truck 
-Existing hyperspectral image (HSI) classification methods rarely consider open-set classification (OSC). Although some reconstruction-based methods can deal with OSC, they lack adaptive threshold strategies and heavily rely on the labeled samples. 
-
-![](https://sjliu.me/images/mdl4ow1.png)
-
-##### What we do: mask out the unknown in black
-What we do here is, by using multitask deep learning, enpowering the deep learning model with the ability to identify the unknown: those masked with black color. 
-For the upper image (Salinas Valley), the roads and houses between farmlands are successfully identified.
-For the lower image (University of Pavia Campus), helicopters and trucks are successfully identified. 
-
-![](https://sjliu.me/images/mdl4ow2.png)
-
-
+Existing hyperspectral image (HSI) classification methods rarely consider open-set classification (OSC). Although some reconstruction-based methods can deal with OSC, they lack adaptive threshold strategies and heavily rely on the labeled samples. Therefore, this article proposes a self-supervised multitask learning (SSMTL) framework for few-shot open-set HSI classification, including three stages: pretraining stage (PTS), fine-tuning stage, and testing stage. The model consists of three modules: data diversification module (DDM), 3-D multiscale attention module (3D-MAM), and adaptive threshold module (ATM), as well as a backbone network: dense feature pyramid network (DFPN).
 
 
 ## Key packages
     tensorflow-gpu==1.9
     keras==2.1.6
     libmr
-    
-Tested on Python 3.6, Windows 10
 
-Recommend Anaconda, Spyder
     
 ## How to use
 #### Hyperspectral satellite images
@@ -45,26 +30,15 @@ The above data is in matlab format, the numpy format can be found here (recommen
 
 
 ### Quick usage
-    python demo_salinas.py
+    python main.py
 
 #### Arguments
-    --nos: number of training samples per class. 20 for few-shot, 200 for many-shot
-    --key: dataname: 'salinas', 'paviaU', 'indian'
-    --gt: gtfile path
+    --DATA_KEY: dataname: 'sa'(salinas), 'pa'(paviaU), 'in'(indian)
+    --nos: number of training samples per class. 20 and 10 for few-shot
     --closs: classification loss weight, default=50 (0.5)
     --patience: if the training loss does not decrease for {patience} epoches, stop training
     --output: save path for output files (model, predict probabilities, predict labels, reconstruction loss)
     --showmap: save classification map
-    
-### Evaluation code update on 18 May 2021
-When using the evaluation code "z20210518a_readoa.py", you should change the parameter "mode" for different settings. The inputs are output files from the training script.
 
-#### Mode
-    mode==0: closed-set
-    mode==1: MDL4OW
-    mode==2: MDL4OW/C
-    mode==3: closed-set with probablity
-    mode==4: softmax with threshold
-    mode==5: openmax
 
 
