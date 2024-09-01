@@ -6,7 +6,7 @@ Caihong Mu; Yu Liu; Xiangrong Yan; Aamir Ali; Yi Liu. Few-Shot Open-Set Hyperspe
 
 Contact: <liu_y@stu.xidian.edu.cn>
 
-Code and annotations are released here, or check [https://github.com/sjliu68/MDL4OW](https://github.com/sjliu68/MDL4OW)
+Code and annotations are released here, or check [https://github.com/yuliu213/SSMTL](https://github.com/yuliu213/SSMTL)
 
 ## Overview
 Existing hyperspectral image (HSI) classification methods rarely consider open-set classification (OSC). Although some reconstruction-based methods can deal with OSC, they lack adaptive threshold strategies and heavily rely on the labeled samples. Therefore, this article proposes a self-supervised multitask learning (SSMTL) framework for few-shot open-set HSI classification, including three stages: pretraining stage (PTS), fine-tuning stage, and testing stage. The model consists of three modules: data diversification module (DDM), 3-D multiscale attention module (3D-MAM), and adaptive threshold module (ATM), as well as a backbone network: dense feature pyramid network (DFPN).
